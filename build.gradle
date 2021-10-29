@@ -1,0 +1,34 @@
+buildscript {
+    repositories {
+        gradlePluginPortal()
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.0-RC"
+        classpath "gradle.plugin.com.github.johnrengelman:shadow:7.1.0"
+    }
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: "org.jetbrains.kotlin.jvm"
+    apply plugin: 'com.github.johnrengelman.shadow'
+
+    group 'ru.kdev'
+    version '1.0-SNAPSHOT'
+
+    repositories {
+        mavenCentral()
+        mavenCentral()
+    }
+
+    dependencies {
+        implementation "org.jetbrains.kotlin:kotlin-stdlib:1.6.0-RC"
+        testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+}
