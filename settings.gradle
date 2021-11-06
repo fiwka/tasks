@@ -2,3 +2,4 @@ rootProject.name = 'tasks'
 
 include 'task01'
 include 'task02'
+include 'task03'
